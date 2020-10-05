@@ -380,7 +380,11 @@ ingress:
     - host: chart-example.local
       paths:
         # NB: You may also want to set the basePath above
-        - /
+        - path: /
+        - path: /2nd-backend
+          serviceName: 2nd-service
+          port: 1234
+
 
   tls: []
   #  - secretName: chart-example-tls
